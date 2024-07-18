@@ -1,0 +1,617 @@
+
+:root{
+    --black: #1B1722;
+    --white : #F0F0F0;
+    --box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    
+}
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+  
+}
+html{
+    font-size: 62.5%;   
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+
+}
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+html::-webkit-scrollbar-thumb{
+    background-color: var(--white);
+    border-radius: 5rem;
+}
+body{
+    background-color: #d6d2d28f;
+}
+.header{
+    border-bottom: solid 0.5px;
+    top: 0;right: 0;left: 0;
+    background-color:#ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    padding: 1.4rem 7%;
+    z-index: 999;
+    font-family: cursive;
+    font-style: italic;
+    font-weight: bold;
+    height: 70px;
+}
+.header .logoContent{
+    display: flex;
+    align-items: center;
+}
+.header .logoContent .logo img{
+    height: 4rem;
+}
+.header .logoContent .logoName {
+    color: var(--black);
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.header .navbar a{
+    margin-right: 5rem;
+    text-decoration: none;
+}
+.header .navbar a:hover{
+    border-bottom: .1rem solid var(--black);
+    padding-bottom: .4rem;
+    
+}
+.order:hover{
+  scale: 1.1;
+}
+.header .user {
+    font-size: 2rem;
+    margin-right: 3rem;
+    color: var(--black);
+    cursor: pointer;
+    font-family: cursive;
+}
+.header .user span:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+/* content */
+.home {
+    margin-right: -115px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(images/giang.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+section{
+    padding: 2rem 7%;
+}
+.form{
+    position: absolute;
+    top: 30%;
+    left: 3%;
+    opacity: 1;
+    background: rgb(255 255 255 / 72%);
+    border-radius: 9px;
+    width: 55%;
+    font-family: cursive;
+    font-size: medium;
+}
+.form span{
+    font-family: cursive;
+    font-size: medium;
+    padding: 10px;
+    margin-left: 10px;
+}
+.form div{
+    border-radius: 9px;
+    padding-left: 0px;
+}
+
+.typePet{
+    font-family: cursive;
+    font-size: medium;
+    border-radius: 9px 9px 0px 0px;
+    padding-left: 10px;
+}
+
+.typePet label{
+ cursor: pointer;
+}
+.pet:checked{
+    accent-color: #b59c68;
+}
+.pet:checked~label{
+    color: #000000;
+  
+}
+.sub_btn{
+    border-radius: 9px;
+    color:white;
+    background-color: rgb(2, 2, 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sub_btn:hover {
+    background: linear-gradient(0deg,#F1E4C3,#C6A969);
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+        inset 0px -4px 0px 0px rgba(89, 126, 82,0.2),
+        0px 0px 0px 4px rgba(255, 255, 255, 0.2),
+        0px 0px 180px 0px #597E52;
+    transform: translateY(-2px);
+}
+
+.sub_btn:hover .text {
+    color: white;
+}
+
+.sub_btn:hover .sparkle {
+    fill: white;
+    transform: scale(1.2);
+} 
+/* ----- */
+.checkbox-wrapper{
+    display: flex;
+
+}
+.checkbox-wrapper input[type="checkbox"] {
+    display: none;
+
+}
+
+.checkbox-wrapper .terms-label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.checkbox-wrapper .terms-label .label-text {
+    margin-left: 10px;
+
+}
+
+.checkbox-wrapper .checkbox-svg {
+    width: 20px;
+    height: 20px;
+    border: #ffffff 1px solid;
+    border-radius: 5px;
+}
+
+.checkbox-wrapper .checkbox-box {
+    fill: rgba(154, 142, 142, 0.425);
+    stroke: #0e0d0f;
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
+    transition: stroke-dashoffset 0.6s ease-in;
+}
+
+.checkbox-wrapper .checkbox-tick {
+    stroke: #0e0d0f;
+    stroke-dasharray: 172;
+    stroke-dashoffset: 172;
+    transition: stroke-dashoffset 0.6s ease-in;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + .terms-label .checkbox-box,
+.checkbox-wrapper input[type="checkbox"]:checked + .terms-label .checkbox-tick {
+    stroke-dashoffset: 0;
+}
+/* -- */
+.customCheckBoxHolder {
+    margin: 5px;
+    display: flex;
+}
+
+.customCheckBox {
+    width: fit-content;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+    padding: 2px 8px;
+    background-color: rgba(0, 0, 0, 0.16);
+    border-radius: 0px;
+    color: rgba(255, 255, 255, 0.7);
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 300ms;
+    transition-property: color, background-color, box-shadow;
+    display: flex;
+    height: 32px;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px 1px 1px 0px;
+    outline: none;
+    justify-content: center;
+    min-width: 55px;
+}
+
+.customCheckBox:hover {
+    background-color: #2c2c2c;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.23) 0px -4px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px -1px 1px 0px, rgba(0, 0, 0, 0.17) 0px 2px 4px 1px;
+}
+
+.customCheckBox .inner {
+    font-size: 18px;
+    font-weight: 900;
+    pointer-events: none;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 300ms;
+    transition-property: transform;
+    transform: translateY(0px);
+}
+
+.customCheckBox:hover .inner {
+    transform: translateY(-2px);
+}
+
+/* Multiple Checkboxes can be chained together for a radio input */
+.customCheckBoxWrapper:first-of-type .customCheckBox {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-right: 0px;
+}
+
+.customCheckBoxWrapper:last-of-type .customCheckBox {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-left: 0px;
+}
+
+.customCheckBoxInput {
+    display: none;
+}
+
+.customCheckBoxInput:checked + .customCheckBoxWrapper .customCheckBox {
+    background-color: #2d6737;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.23) 0px -4px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px -1px 1px 0px, rgba(0, 0, 0, 0.17) 0px 2px 4px 1px;
+}
+
+.customCheckBoxInput:checked + .customCheckBoxWrapper .customCheckBox .inner {
+    transform: translateY(-2px);
+}
+
+.customCheckBoxInput:checked + .customCheckBoxWrapper .customCheckBox:hover {
+    background-color: #34723f;
+    box-shadow: rgba(0, 0, 0, 0.26) 0px -4px 1px 0px inset, rgba(255, 255, 255, 0.17) 0px -1px 1px 0px, rgba(0, 0, 0, 0.15) 0px 3px 6px 2px;
+}
+
+.customCheckBoxWrapper .customCheckBox:hover .inner {
+    transform: translateY(-2px);
+}
+/*--Checkbox for services--*/
+
+.boxContent{
+    margin-bottom: 5px;
+    position: relative;
+}
+.boxContent::before,.boxContent::after{
+    content:'';
+    position: absolute;
+    border-radius: 10px;
+}
+.boxContent::before{
+    width: 100%;
+    height: 100%;
+    background: rgb(255,255,255);
+    box-shadow: 0 0 15px rgba(0,0,0,0.075);
+    z-index: -1;
+}
+.boxContent::after{
+
+    width: 115%;
+    height: 115%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.050);
+    z-index: -2;
+}
+/*            .box input:checked ~ .boxContent::after{
+                background: linear-gradient(to right,#7f00ff, #e100ff);
+            }*/
+.box input:checked ~ .boxContent i, .box input:checked ~ .boxContent{
+    background: linear-gradient(0deg,#F1E4C3,#C6A969);            
+    background-clip: text;
+    -webkit-background-clip: padding-box;
+    /* -webkit-text-fill-color: rgb(89, 126, 82); */
+    -webkit-text-fill-color: black;
+    font-size: large;
+    font-family:cursive;
+    font-style: italic;
+}
+.content{
+    margin: 0 auto;
+    padding: 0px;
+    width: 91%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.content .box{
+    border: 1px solid;
+    border-radius: 10px;
+    width: 100%;
+    height: 80px;
+    position: relative;
+    margin: 5px;
+}
+.content .box:hover{
+    background: linear-gradient(0deg,#F1E4C3,#C6A969)
+}
+.content .box input{
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance:none;
+    z-index: 20;
+    left: 0;
+    top: 0px;
+}
+.boxContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+  /*=============== CARD ===============*/
+.slide_product a {
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 15px;
+}
+  
+.slide_product img {
+   
+    display: block;
+    max-width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}  
+.slide_product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+  
+.card__container {
+    padding-block: 5rem;
+   
+}
+  
+.card__content {
+    margin-inline: 1.75rem;
+    border-radius: 1.25rem;
+    overflow: hidden;
+}
+  
+.card__article {
+    background-color: #ffffff;
+    width: 300px; /* Remove after adding swiper js */
+    border-radius: 1.25rem;
+    overflow: hidden;
+    border:solid #08A88A;
+}
+  
+.card__image {
+    position: relative;
+    background-color: var(--first-color-light);
+    padding-top: 1.5rem;
+    margin-bottom: -.75rem;
+}
+.card__image:hover {
+    transform: scale(1.1);
+}
+  
+.card__data {
+    background-color: var(--container-color);
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+  
+.card__img {
+    width: 180px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+}
+.card__shadow {
+    width: 200px;
+    height: 200px;
+    background-color: var(--first-color-alt);
+    border-radius: 50%;
+    position: absolute;
+    top: 3.75rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    filter: blur(45px);
+}
+.card__name {
+    color: var(--second-color);
+    margin-bottom: .75rem;
+    font-family: cursive;
+    font-size: x-large;
+}
+.card__description {
+    font-weight: 500;
+    margin-bottom: 1.75rem;
+    font-family: cursive;
+}
+.card__button {
+    display: inline-block;
+    background-color: #08A88A;
+    padding: .75rem 1.5rem;
+    border-radius: .25rem;
+    color: white;
+    font-weight: 600;
+}
+.card__button:hover {
+    background-color: #0fa564;
+    scale: 1.2;
+}
+  
+.swiper_pagination-bullet {
+  background-color: hsl(212, 32%, 40%);
+  opacity: 1;
+}
+  
+.swiper-pagination-bullet-active {
+  background-color: var(--second-color);
+}
+  
+  /*=============== BREAKPOINTS ===============*/
+  /* For small devices */
+@media screen and (max-width: 320px) {
+    .card__data {
+      padding: 1rem;
+    }
+}
+  
+  /* For medium devices */
+@media screen and (min-width: 768px) {
+    .card__content {
+      margin-inline: 3rem;
+}
+  
+.swiper-button-next,
+.swiper-button-prev {
+      display: block;
+ }
+}
+  
+/* For large devices */
+  @media screen and (min-width: 1120px) {
+.card__container {
+      max-width: 1120px;
+    }
+  
+.swiper-button-prev {
+      left: -1rem;
+    }
+.swiper-button-next {
+      right: -1rem;
+    }
+  }
+  /* update */
+.newsletter{
+    background: url(images/giang.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    margin-top: 28px;
+    height: 170px;
+    position: relative;
+}
+.newsletter form{
+    max-width: 45rem;
+    text-align: center;
+    padding: 5rem 0;
+    position: absolute;
+    top: -35px;
+    left: 70px;
+
+}
+.newsletter form h3{
+    font-size: 3rem;
+    color: var(--white);
+    padding-bottom: .7rem;
+    font-family: cursive;
+}
+.newsletter form .box{
+    width: 100%;
+    margin: .7rem 0;
+    padding: 1rem 1.2rem;
+    color: var(--black);
+    border-radius: .5rem;
+    font-family: cursive;
+}
+.newsletter form .box2{
+    width: 30%;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    padding: .5rem .5rem;
+    color: var(--black);
+    background: var(--white);
+    border-radius: 3rem;
+    cursor:pointer;
+    font-family: cursive;
+}
+.newsletter form .box2:hover{
+  
+    background-color: black;
+    color: white;
+    scale: 1.1;
+}
+  /* review */
+.review{
+ 
+    padding: 20px;
+    display: flex;
+    justify-content:space-evenly;
+    text-align: center;
+}
+.creater{
+
+    text-align: center;
+    color:rgb(0, 0, 0);
+    background-color: #08A88A;
+    padding-top: 20px;
+    border-radius: 20px;
+    font-family: cursive;
+}
+.creater img{
+    border-radius: 15px;
+    height: 100px;
+    margin: 10px;
+}
+.creater p{
+    text-align: justify;
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+    font-family: cursive;
+    font-size: larger;
+}
+.clientDetailed{
+    align-items: center;
+    display: flex;
+}
+.clientDetailed div{
+    justify-content: center;
+    color: white;
+}
+.product_for_customer{
+    margin: 0 auto;
+    
+}
+/* .product_for_customer tr th{
+    border: 1px solid;
+    padding: 10px 20px 10px 20px;
+    width: 200px;
+    font-size: medium;
+    font-family: cursive;
+} */
